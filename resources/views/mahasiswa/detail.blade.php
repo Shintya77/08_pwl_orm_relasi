@@ -10,13 +10,13 @@
                 </div>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><b>Nim: </b>{{ $mahasiswa->nim }}</li>
-                        <li class="list-group-item"><b>Nama: </b>{{ $mahasiswa->nama }}</li>
-                        <li class="list-group-item"><b>Kelas: </b>{{ $mahasiswa->kelas->nama_kelas }}</li>
-                        <li class="list-group-item"><b>Jurusan: </b>{{ $mahasiswa->jurusan }}</li>
-                        <li class="list-group-item"><b>Email: </b>{{$mahasiswa->email}}</li>
-                        <li class="list-group-item"><b>Alamat: </b>{{$mahasiswa->alamat}}</li>
-                        <li class="list-group-item"><b>Tanggal lahir: </b>{{$mahasiswa->tgl_lahir}}</li>
+                        <li class="list-group-item"><b>Nim: </b>{{ $mhs->nim }}</li>
+                        <li class="list-group-item"><b>Nama: </b>{{ $mhs->nama }}</li>
+                        <li class="list-group-item"><b>Kelas: </b>{{ $mhs->kelas->nama_kelas }}</li>
+                        <li class="list-group-item"><b>Jurusan: </b>{{ $mhs->jurusan }}</li>
+                        <li class="list-group-item"><b>Email: </b>{{$mhs->email}}</li>
+                        <li class="list-group-item"><b>Alamat: </b>{{$mhs->alamat}}</li>
+                        <li class="list-group-item"><b>Tanggal lahir: </b>{{$mhs->tgl_lahir}}</li>
                     </ul>
                 </div>
                 <a class="btn btn-success mt-3" href="{{ route('mahasiswa.index') }}">Kembali</a>

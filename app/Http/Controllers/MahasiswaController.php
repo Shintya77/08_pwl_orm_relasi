@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
 use Illuminate\Support\Facades\DB;
 use App\Models\Kelas;
+use App\Models\Mahasiswa_Matakuliah;
 
 
 class MahasiswaController extends Controller
@@ -68,7 +69,8 @@ class MahasiswaController extends Controller
         //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
         //Code sebelum dibuat relasi-->$mahasiswas = Mahasiswa::find($id);
         $mahasiswa = Mahasiswa::with('kelas')->where('nim', $nim)->first();
-        return view('mahasiswa.detail', ['mahasiswa' => $mahasiswa]);;
+        return view('mahasiswa.detail', ['mhs' => $mahasiswa]);;
+
     }
 
     public function edit($nim)
@@ -115,5 +117,6 @@ class MahasiswaController extends Controller
         Mahasiswa::where('id_mahasiswa', $mahasiswa->id_mahasiswa)->delete();
         return redirect()->route('mahasiswa.index')->with('success', 'Data berhasil dihapus');
     }
+    
    
 };
