@@ -18,6 +18,10 @@ class NilaiController extends Controller
         return view('mahasiswa.nilai', ['mhs'=>$mahasiswa, 'nilai'=>$matakuliah]);
    
     }
+    public function nilai($nim){
+        $nilai = Mahasiswa::with('kelas', 'matakuliah')->find($nim);
+        return view('mahasiswa.nilai', compact('nilai'));
+    }
    
 
 }
